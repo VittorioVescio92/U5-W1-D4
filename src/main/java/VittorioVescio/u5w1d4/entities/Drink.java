@@ -8,27 +8,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Table(name = "toppings")
+@Table(name = "drinks")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class ExtraAdditionDecorator extends Consumation {
+@Getter
+@Setter
+public abstract class Drink extends Consumation {
 	@Id
 	@GeneratedValue
 	private UUID id;
-	@Transient
-	Consumation pizza;
 
-	@Override
-	public abstract String getNome();
-
-	@Override
-	public abstract double getPrezzo();
-
-	@Override
-	public abstract long getCalorie();
-
-	@Override
-	public abstract String getIngredienti();
 }

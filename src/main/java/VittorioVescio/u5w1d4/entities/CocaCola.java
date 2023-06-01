@@ -1,25 +1,25 @@
 package VittorioVescio.u5w1d4.entities;
 
 import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class CocaCola extends Consumation {
-	private String nome = "Coca Cola";
-	private long calorie = 200;
-	private double prezzo = 3.00;
-	private double volume = 1.5;
+
+public class CocaCola extends Drink {
+
+	public CocaCola() {
+		super();
+		setNome("Coca-Cola");
+		setPrezzo(1.50);
+		setCalorie(1500);
+
+	}
 
 	@Override
 	public String toString() {
-		return getNome() + " - Prezzo = " + "€ " + getPrezzo() + ", Calorie = " + getCalorie() + ", Volume = "
-				+ getVolume() + " litri.";
+		return getNome() + " - Prezzo = " + "€ " + getPrezzo() + ", Calorie = " + getCalorie();
 	}
 }

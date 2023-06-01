@@ -1,5 +1,12 @@
 package VittorioVescio.u5w1d4.entities;
 
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 public class BoscaiolaDecorator extends ExtraAdditionDecorator {
 	public BoscaiolaDecorator(Pizza pizza) {
 		this.pizza = pizza;

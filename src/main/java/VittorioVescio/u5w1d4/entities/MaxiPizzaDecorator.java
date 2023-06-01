@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class MaxiPizzaDecorator extends ExtraAdditionDecorator {
-	public MaxiPizzaDecorator(Pizza pizza) {
+	public MaxiPizzaDecorator(Consumation pizza) {
 		this.pizza = pizza;
 	}
 

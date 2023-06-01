@@ -1,23 +1,33 @@
 package VittorioVescio.u5w1d4.entities;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-
+@Table(name = "pizze")
 public class Pizza extends Consumation {
+	@Id
+	@GeneratedValue
+	private UUID id;
+	private String ingredienti;
 
-	private String ingredienti = "Pomodoro, Mozzarella";
-	private String nome = "Margherita";
-	private long calorie = 500;
-	private double prezzo = 4.50;
+	public Pizza() {
+		super();
+		setNome("Margherita");
+		setPrezzo(4.50);
+		setCalorie(500);
+		setIngredienti("Pomodoro, Mozzarella");
+	}
 
 	@Override
 	public String toString() {
